@@ -24,20 +24,20 @@ import com.example.androiddevchallenge.data.DogViewModel
 
 class MainActivity : AppCompatActivity() {
 
-  private val navigationViewModel by viewModels<NavigationViewModel>()
-  private val dogViewModel by viewModels<DogViewModel>()
+    private val navigationViewModel by viewModels<NavigationViewModel>()
+    private val dogViewModel by viewModels<DogViewModel>()
 
-  @ExperimentalFoundationApi
-  override fun onCreate(savedInstanceState: Bundle?) {
-    super.onCreate(savedInstanceState)
-    setContent {
-      DogAdoptionApp(dogViewModel, navigationViewModel)
+    @ExperimentalFoundationApi
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContent {
+            DogAdoptionApp(dogViewModel, navigationViewModel)
+        }
     }
-  }
 
-  override fun onBackPressed() {
-    if (!navigationViewModel.onBack()) {
-      super.onBackPressed()
+    override fun onBackPressed() {
+        if (!navigationViewModel.onBack()) {
+            super.onBackPressed()
+        }
     }
-  }
 }
